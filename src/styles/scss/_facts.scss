@@ -1,0 +1,86 @@
+@import "./variables";
+
+.factsContainer {
+  @include flexprop(column, center, center);
+  width: 90%;
+  z-index: 100 !important;
+  max-width: var(--max-width);
+
+  .cardsContainer,
+  .factCard {
+    border-radius: var(--m-border-radius);
+  }
+  .cardsContainer {
+    width: 100%;
+    padding: var(--p-padding);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .factCard {
+      position: relative;
+      background-color: var(--card-bg);
+      width: 30%;
+      min-height: 200px;
+      box-shadow: var(--card-shadow-dark);
+      margin-bottom: var(--m-margin);
+      transition: all 0.5s ease-in-out;
+      letter-spacing: 0.01em;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.05);
+      }
+
+      .circle {
+        @include flexprop(row, center, center);
+        margin: auto;
+        position: absolute;
+        top: -1rem;
+        left: 50%;
+        transform: translate(-50%);
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 46% 54% 59% 41% / 49% 60% 40% 51%;
+        background: var(--mint-linear-gradient);
+        color: var(--font-color-lightest);
+        font-size: var(--sm-font);
+        font-weight: 700;
+        z-index: 100;
+      }
+
+      .front {
+        @include flexprop(column, center, center);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: var(--s-border-radius);
+
+        p {
+          text-align: center;
+          padding: 0 0.5rem;
+          width: 100%;
+          font-size: var(--xs-font);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .factsContainer .cardsContainer {
+    width: 95%;
+    @include flexprop(column, center, center);
+    .factCard {
+      width: 80%;
+      height: 20vh;
+      box-shadow: var(--card-shadow);
+      margin-bottom: var(--s-margin);
+      .front {
+        p {
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}

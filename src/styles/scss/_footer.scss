@@ -1,0 +1,13 @@
+@import "./_variables";
+
+.footerContainer {
+  @include flexprop(row, center, center);
+  width: 100%;
+  .footerWrapper {
+    @include flexprop(column, center, center);
+    p {
+      font-size: 0.7rem;
+      line-height: 0.8rem;
+    }
+  }
+}

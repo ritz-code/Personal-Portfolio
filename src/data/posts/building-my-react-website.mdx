@@ -1,0 +1,110 @@
+---
+title: Building my Portfolio
+description: A detailed documentation of all the tools and packages used in this website. The basic thought process behind all the decisions made are also documented in this write up.
+publishedOn: July 5, 2022
+slug: building-my-react-website
+author: Ritu Rawat
+published: true
+---
+
+I started my web development journey about one and a half year back. Web development is an ever expanding field, where there is always a new package, a new tool or a new library to choose from. Sorting through the plethora of documenation, blogs, online tutorials is confusing at times.
+
+Sometime back when I started to create a new version of my website on React, I decided to document all the tools and packages I used. The basic thought process behind all the decisions made are documented in this write up.
+
+####1. Installing React
+First, I installed create-react-app for React. An app created by create-react-app is structured by default. All the dependencies files are in node modules and they are mentioned in package.json file. Packages like Webpack (a module bundler) and Babel are pre-installed in the create-react-app project. We can install create-react-app by:
+
+<Code language="nodejs">
+  npx create-react-app project_name
+  npm install react-router-dom  
+  npm insatll sass
+</Code>
+
+Also installed react-router-dom for React routing and navigation, and SASS for easier CSS manipulation.
+To run the application, we change directory to the project_name directory and then _start_ the project
+
+<Code language="javascript">$ cd project_name $ npm start</Code>
+
+#### 2. Fonts, Smooth Scrolling and Hyphenation
+
+Second, decided on using the _Inter_ font family for my portfolio.
+Opened my stylesheet _App.css_ and pasted the following line at the top:      
+
+<Code language="javascript">
+  @import url("google-font-link-here");
+</Code>      
+
+Smooth Scrolling makes the scrolling experience more seamless and it is very easy to implement. Add *scroll-behavior: smooth* to the _html_ element to enable smooth scrolling for the whole page
+
+<Code language="css">
+html {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+</Code>       
+
+A single line code makes scrolling so much more intuitive.
+
+Next, I wanted to implement Hyphenation. It provides more readability in an app because hyphenation breaks down words into syllables with hyphens and makes for a more natural looking text.
+This is taken care of a new property _hyphens_ introduced in CSS3, that accepts values *none*, *manual* and *auto*.
+
+<Code language="css">
+    *{
+        hyphens: auto;
+    }
+</Code>          
+Adding the property to the full app with * selector makes the property visible across the complete app.
+
+
+#### 3. Multi page routing
+I was generating a  multi page React app. A goof project has smooth scrolling to the different sections on the home page and similarly smooth navigation to other pages.
+
+I tried using *react-scroll* package to scroll to different sections in my home page. This worked very well, however navigating to a different page did not go as smoothly.
+
+Finally, I used *react-router-hash-link* to navigate this issue. *react-router-hash-links* provided me a very smooth transition between different sections of the same page, 
+I additionally used the old faithful *react-router-dom* *Link* to navigate to multiple pages in the app.
+
+
+
+#### 4. MDX 
+
+MDX is a new package which combines the capabilities of Markdwon and JSX.
+It compiles to JavaScript. 
+
+In order to manually compile MDX files, I installed *@mdx-js/mdx*
+I added support for MDX with *markdwon-to-jsx* which exports a React component by default for easy JSX composition. Finally, *react-syntax-highlighter* was installed, for highlighting React components.
+
+<Code language="javascript">
+  npm install @mdx-js/mdx 
+  npm install markdown-to-jsx
+  npm install react-syntax-highlighter --save
+</Code>
+
+I kept all my .mdx file in the *data/posts* folder. This time around, I wanted to avoid using any database retrieval and perform recursion the directory. How it works is that the blog module imports all the files in the *data/posts* folder and recursively displays them on the blog entry page.     
+This came with its own set of challenges because I could't find any npm packages matching my specific requirements. importing one file was easy but importing multiple turned out to be something not easily accessible in React.
+
+So, finally I came across require.context API which is part of Webpack; pre-built in the *create-react-app*. More details about how I went about directory file retrieval are mentioned in my article, [Recursing Multiple Files With require.context API](https://www.riturawat.com/blog/mdx-files-with-webpack).
+
+
+#### 5. Dark mode
+Dark mode is very popular right now, and righly so considering how convenient it makes looking at a screen in the dark. Dark mode needs to be thought out and the switch from light to dark, or vice-versa need to be so that the accessibility and visibility are not affected.   
+I opted for a very simple darkMode implementation. I used global variables *darkTheme* which is shared globally with the useContext hook in React. The *ThemeContext.Provider* with useContext data wraps itself around the *Layout* and navigation *Routes*, making it accessible to all the app pages if need be.
+
+The darkTheme is set in the *navbar* by clicking a light switch. Once the switch is clicked, the state toggles and is reflected acroos the full app.
+
+All the individual pages were assigned an inline *style* component which checks if the *darkTheme* global variable is set or not. If it is, the full app reflects dark mode.
+
+The inline style is:
+
+<Code language="javascript">
+  const themeStyles = {
+    backgroundColor: darkTheme ? '#1a1b1e' : '#edeae5',
+    color: darkTheme ? '#f3f2f9' : '#1a1b1e'
+  }
+</Code>
+
+Other than this, I made sure that the styling was such that I did not have to make major changes to my code. Most of my cards on the page have a semi-transparent background color and did not need a major restructuring in terms of style. This is a very simple way to do dark mode and works well for my website. 
+
+
+#### 6. Other packages used.
+In addition to these packages, I used *file-saver* package to download files such as my resume from the app. 

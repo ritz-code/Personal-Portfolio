@@ -1,0 +1,73 @@
+@import "./variables";
+
+.postContainer {
+  width: 100%;
+  @include flexprop(column, center, center);
+
+  .titleBkgnd {
+    position: relative;
+    width: 100%;
+    margin-top: var(--l-margin);
+    @include flexprop(row, center, center);
+    h2 {
+      @include flexprop(row, center, center);
+      width: 80%;
+      max-width: var(--max-width);
+      padding: var(--s-padding);
+    }
+  }
+  .postWrapper {
+    width: 80%;
+    max-width: var(--max-width);
+    padding: var(--p-padding);
+    border-radius: var(--m-border-radius);
+    hr {
+      margin-bottom: var(--s-margin);
+      color: var(--orange-linear-gradient);
+    }
+    a {
+      color: var(--mint);
+    }
+    p {
+      line-height: 2.8rem;
+      margin-bottom: var(--s-margin);
+    }
+    p:first-child {
+      margin-bottom: var(--xxs-margin);
+    }
+    h3,
+    h4 {
+      font-weight: 700;
+      color: var(--orange);
+      margin-top: var(--m-margin);
+    }
+    h3 {
+      font-size: 2rem;
+    }
+    h4 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .postContainer {
+    .titleBkgnd {
+      margin-top: var(--l-margin);
+      h2 {
+        width: 90%;
+        font-size: 1.5rem !important;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        border-top: 0.4rem solid transparent;
+      }
+    }
+    .postWrapper {
+      width: 90%;
+      padding: var(--s-padding);
+    }
+  }
+}

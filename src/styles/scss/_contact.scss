@@ -1,0 +1,180 @@
+@import "./_variables";
+
+.contactContainer {
+  @include flexprop(column, center, center);
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  h1 {
+    position: relative;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .contactDetailsContainer {
+    @include flexprop(column, space-around, center);
+    padding: var(--m-padding) 0;
+    max-width: var(--max-width);
+    z-index: 1000;
+    bottom: 2rem;
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    height: 65vh;
+    width: 90%;
+    border-radius: var(--m-border-radius);
+    border-bottom: var(--card-border-lt);
+    background-image: linear-gradient(
+      145deg,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.7)
+    );
+    h2 {
+      margin-top: -1rem;
+      font-size: var(--ml-font);
+      text-shadow: 1px 1px var(--);
+    }
+    .description {
+      @include flexprop(column, center, center);
+      p {
+        max-width: 60%;
+        font-size: var(--s-font);
+        letter-spacing: var(--letter-spacing);
+      }
+    }
+    .iconsBox {
+      margin-top: var(--s-margin);
+      width: 50%;
+      @include flexprop(row, space-around, center);
+
+      .icon {
+        @include flexprop(column, center, center);
+        position: relative;
+        border-radius: 50%;
+        background-color: var(--color-icon-bg);
+        box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        width: 50px;
+        height: 50px;
+        &:hover,
+        &:focus {
+          background: linear-gradient(var(--mint-green), var(--lt-mint-green));
+        }
+
+        a span {
+          @include flexprop(column, center, center);
+          font-size: 1.125rem;
+          line-height: 1.75rem;
+        }
+
+        .tooltip {
+          display: flex;
+          justify-content: center;
+          position: absolute;
+          top: -2.5rem;
+          cursor: pointer;
+          color: var(--color-heading);
+          font-size: var(--xs-font);
+          padding: 3px 5px;
+          border-radius: 5px;
+          background-color: var(--mint-green);
+          box-shadow: 0 10px 10px rgb(0 0 0 / 10%);
+          opacity: 0;
+          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+          &::before {
+            position: absolute;
+            content: "";
+            height: 8px;
+            width: 8px;
+            background-color: var(--mint-green);
+            bottom: -3px;
+            left: 50%;
+            transform: translate(-50%) rotate(45deg);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          }
+        }
+
+        &:hover .tooltip,
+        &:focus .tooltip {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .pulsatingCircle {
+    position: absolute;
+    width: 80vh;
+    height: 80vh;
+    bottom: -15rem;
+    left: -15rem;
+    background-color: var(--lt-orange);
+    border-radius: 50%;
+    z-index: 20;
+    animation: pulse 2s infinite;
+  }
+  .pulsatingCircle::before {
+    content: "";
+    position: absolute;
+    width: 60vh;
+    height: 60vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--md-orange);
+    border-radius: 50%;
+    z-index: 50;
+  }
+  .pulsatingCircle::after {
+    content: "";
+    position: absolute;
+    width: 40vh;
+    height: 40vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(var(--lt-orange), var(--dark-orange) 70%);
+    border-radius: 50%;
+    z-index: 100;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(0.98);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.98);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .contactContainer {
+    h1 {
+      font-size: 18vw;
+    }
+    .contactDetailsContainer {
+      h3 {
+        font-size: var(--sm-font);
+      }
+      .description {
+        p {
+          max-width: 80%;
+          font-size: 0.7rem;
+        }
+      }
+      .iconsBox {
+        width: 80%;
+      }
+    }
+  }
+}

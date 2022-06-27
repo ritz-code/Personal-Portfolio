@@ -1,0 +1,96 @@
+@import "./variables";
+
+.projectsContainer {
+  .projectsWrapper {
+    width: 80%;
+    max-width: $max-width;
+
+    .projectCard,
+    .cardImg,
+    .cardImg img {
+      border-radius: var(--m-border-radius);
+    }
+    .projectCard {
+      @include flexprop(row, space-around, center);
+      box-shadow: var(--card-shadow-s);
+      border-radius: 50px;
+      margin-bottom: var(--m-margin);
+      border-radius: var(--l-border-radius);
+      padding: var(--p-padding);
+      background-image: url("../../../public/bananas/email-pattern.png");
+
+      .cardImg {
+        width: 35%;
+        box-shadow: var(--big-box-shadow);
+        transition: all 0.3s ease;
+        img {
+          max-width: 100%;
+        }
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+      .cardDetails {
+        width: 50%;
+        color: var(--font-color-dark);
+        h3 {
+          margin-bottom: 0rem;
+        }
+        h5 {
+          font-size: 0.65rem;
+          opacity: 0.8;
+          margin-bottom: var(--xxs-margin);
+        }
+        .builtUsing {
+          margin-top: var(--xs-margin);
+          margin-bottom: var(--xs-margin);
+          letter-spacing: 0.03rem;
+        }
+        .line {
+          height: 5px;
+          width: 3rem;
+          border-radius: 50px;
+          background: var(--mint-green);
+          background-size: 200%;
+          margin-bottom: var(--xs-margin);
+        }
+        a.button1 {
+          position: relative;
+          margin-right: var(--xxs-margin);
+        }
+        a.button1:hover {
+          background: var(--rainbow-linear-gradient);
+          background-size: 400%;
+          font-weight: 700;
+          animation: bg-animation 5s infinite alternate;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .projectsContainer {
+    .projectsWrapper {
+      width: 90%;
+      .projectCard {
+        @include flexprop(column, space-around, center);
+        .cardImg {
+          width: 98%;
+          margin-bottom: var(--xs-margin);
+        }
+        .cardDetails {
+          width: 98%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .projectsContainer {
+    h2 {
+      margin-top: var(--xxl-margin);
+    }
+  }
+}

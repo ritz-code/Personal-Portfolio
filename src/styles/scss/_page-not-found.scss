@@ -1,0 +1,40 @@
+@import "./_variables";
+
+.notFoundContainer {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  background-color: #edeae5;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    margin: 0 auto;
+  }
+  .notFoundWrapper {
+    position: absolute;
+    @include flexprop(column, center, center);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    a button {
+      cursor: pointer;
+      font-size: var(--xs-font);
+      background-color: transparent;
+      margin-top: var(--s-margin);
+      padding: var(--xs-padding);
+      letter-spacing: var(--letter-spacing);
+      border: var(--red-button-border);
+      border-radius: var(--m-border-radius);
+      box-shadow: var(--red-button-shadow);
+      transition: all 0.2s ease-in;
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

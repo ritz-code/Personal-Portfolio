@@ -1,0 +1,71 @@
+@import "./_variables";
+
+#home {
+  @include flexprop(row, space-around, center);
+  height: 80vh;
+  .homeContainer {
+    @include flexprop(column, center, center);
+    width: 70vh;
+    height: 70vh;
+    margin-top: var(--xl-margin);
+    background: var(--rainbow-linear-gradient);
+    border-radius: 50%;
+    background-size: 400%;
+    animation: bg-animation 5s infinite alternate;
+
+    .my-projects-title {
+      align-items: left;
+      max-width: 100%;
+      font-size: var(--font-heading);
+    }
+
+    .my-projects-title text {
+      fill: var(--dark-slate);
+      stroke: var(--slate);
+      fill-opacity: 1;
+      stroke-width: 0;
+      font-weight: 700;
+      stroke-dasharray: 100% 0;
+      animation: stroke-offset 10s ease-out infinite;
+    }
+
+    .resumeBtn {
+      margin-top: var(--xxs-margin);
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: var(--mint-linear-gradient);
+      letter-spacing: var(--letter-spacing);
+    }
+
+    @keyframes stroke-offset {
+      0% {
+        fill-opacity: 0;
+        stroke-width: 0;
+        stroke-dasharray: 0% 100%;
+      }
+      25% {
+        stroke-width: 0.5px;
+      }
+      50% {
+        fill-opacity: 0;
+      }
+      75% {
+        stroke-width: 0.5px;
+      }
+      100% {
+        stroke-width: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  #home .homeContainer {
+    width: 25rem;
+    height: 25rem;
+    p {
+      font-size: 0.7rem;
+    }
+  }
+}

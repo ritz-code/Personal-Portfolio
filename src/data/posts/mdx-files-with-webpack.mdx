@@ -1,0 +1,71 @@
+---
+title: Recursing Multiple Markdown Files With require.context API
+description: A guide to importing multiple files from a directory using Webpack's require.context API. Documentation of how I used this under appreciated, but very powerful API to fill the gaps in my portfolio blog implementation.
+publishedOn: July 1, 2022
+slug: mdx-files-with-webpack
+author: Ritu Rawat
+published: true
+---
+
+When I decided to implement a blog in the newest version of my personal portfolio, I thought it would be a cake walk having already implemented a blog in React. Turned out it was a tad bit more demanding than that, as a learning opportunity should be.
+
+In my previous React blog project, I had implemented a blog entry page, which took the blog details, connected to the server which in turn POSTed it to the MySQL database. Retreiving the blog list and individual blog pages were just a matter of making a fetch API call within a useEffect hook to ensure the data availability before dispalying the data on the browser.
+
+This time however, I decided to try something new to store my blog articles. Storing all my markdown files in a folder and then rendering them in a React component, felt like a great plan. There would be no need for making DB queries, and I could drop new blog pieces whennever I wanted by just dropping it in the folder. And, of course trying something different is always fun.
+
+I tried importing the files, putting all the metadata for blog retreival in a json file. Soon, I figured out that there are not many ways to import a recursive file directory in React. More research led me towards Gatsby and other such static app generators. I however wanted to stick to React, and try and do it without too many other modules.
+
+###require.context
+It was then I came across require.context() in Webpack documentation.
+Webpack is a module bundler which compiles JavaScript modules. In order to take stock of all the modules available in a project, Webpack needs to recursively parse through all the modules in a file ystem. This is performed by the require.context API.
+
+require.context is a very under-utilised and powerful part of Webpack. It helps us dynamically load our files, including from recursive directories.
+The syntax is:
+
+<Code language="javascript">
+  require.context( directory, (useSubdirectories = true), (regExp = /^\.\/.*$/),
+  (mode = 'sync') );
+</Code>
+
+We pass a directory to the require.context API, set the flag if the sub directories need searching too, a regex to match the file against and the mode of file search.
+
+###context module API
+According to the Webpack documentation:
+"A context module exports a (require) function that takes one argument: the request. The exported function has 3 properties: resolve, keys, id.
+
+resolve is a function and returns the module id of the parsed request.
+keys is a function that returns an array of all possible requests that the context module can handle. This can be useful if you want to require all files in a directory or matching a pattern."
+
+Example:
+
+<Code language="javascript">
+function importAll(r) {
+  r.keys().forEach(r);
+}
+importAll(require.context('../components/', true, /\.js$/));
+</Code>
+
+Now, this is what I needed for my code to work the way I wanted it to. However, I was working 
+with *create-react-app* and had never used Webpack before. Good thing I remembered why *create-react-app* 
+is so popular. *create-react-app* already contains configurations of many modules, including Webpack.
+So, it was a matter of only writing the code in the React app.
+
+This was my code:
+
+<Code language="javascript">
+const importAll = (r) => r.keys().map(r);
+const markdownFiles = importAll(require.context('../../data/posts', false, /\.mdx$/)).sort().reverse();
+
+    async function getPosts() {
+        const posts = await Promise.all(markdownFiles.map((file) => fetch(file).then((res) => res.text())))
+            .catch((err) => console.error(err));
+    }
+
+</Code>
+
+Now all my markdown files had been imported to *posts*, and I was free to map through the 
+array of blogs to display on the main blog page.
+
+On the surface importing multiple recursive files seems like a cakewalk. However, the trial and error taught me something new about the 
+extensive capabilities of Webpack and create-react-app.
+

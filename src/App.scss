@@ -1,0 +1,165 @@
+@import "../src/styles/scss/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  hyphens: auto;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.65;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+}
+h3,
+h4,
+h5,
+p {
+  letter-spacing: 0.04rem;
+}
+
+h1 {
+  font-size: var(--font-heading);
+  margin-top: var(--l-margin);
+  font-weight: 500;
+  text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5,
+    -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5,
+    -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5,
+    -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
+}
+
+h1:hover,
+h1:focus {
+  transition: all 0.3s ease-in-out;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: var(--xxs-margin);
+}
+
+h2 {
+  font-size: var(--font-subheading);
+  font-weight: 700;
+  margin-top: var(--l-margin);
+  margin-bottom: var(--xs-margin);
+}
+
+h2:hover,
+h2:focus {
+  opacity: 0.8;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: var(--xxs-margin);
+}
+
+h4 {
+  font-size: var(--s-font);
+  font-weight: 500;
+}
+h5 {
+  font-size: var(--xs-font);
+  font-weight: 500;
+  color: var(--font-color-lt);
+}
+
+h8 {
+  font-size: 0.7rem;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 80%;
+  background-color: var(--light-slate);
+  height: 1px;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 18vw;
+  }
+  h2 {
+    font-size: 8vmin;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.75rem;
+    line-height: 0.9rem;
+  }
+}
+
+.dark-theme {
+  background-color: $background-dark !important;
+  color: var(--font-color) !important;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  @include flexprop(column, center, center);
+}
+
+.card {
+  border-radius: var(--m-border-radius);
+}
+
+.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  border: 1px solid var(--font-color-dark);
+  padding: var(--xs-padding);
+  text-decoration: none;
+  color: var(--font-color-dark);
+  font-size: 0.65rem;
+  font-weight: 500;
+  border-radius: var(--xs-border-radius);
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}

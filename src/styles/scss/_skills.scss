@@ -1,0 +1,115 @@
+@import "./_variables";
+
+.skillsContainer {
+  box-shadow: var(--card-shadow-s);
+  border-radius: var(--l-border-radius);
+  @include flexprop(column, center, center);
+  .skillsWrapper {
+    @include flexprop(row, center, center);
+    height: 85vh;
+    width: 95%;
+    max-width: 1000px;
+
+    .skillcard,
+    .skills div {
+      border-radius: var(--l-border-radius);
+      box-shadow: var(--card-shadow-s);
+    }
+
+    .techstack,
+    .skills {
+      max-height: 80vh;
+    }
+    .techstack {
+      @include flexprop(row, center, center);
+      width: 40vw;
+      flex-wrap: wrap;
+      margin: var(--xs-margin) 0;
+
+      .skillcard {
+        @include flexprop(column, center, center);
+        height: 20%;
+        max-height: 15vw;
+        backdrop-filter: blur(10px);
+        background-color: var(--card-bg);
+        flex: 40%;
+        margin-right: var(--xs-margin);
+        margin-bottom: var(--xs-margin);
+        opacity: 0.9;
+        .skillsImg {
+          height: 50%;
+          max-height: 5vw;
+          font-size: 1.875rem;
+          line-height: 2.25rem;
+          margin: var(--xs-margin);
+          transition: all 0.3s ease;
+        }
+
+        .skillsImg:hover,
+        .skillsImg:focus {
+          transform: scale(1.1);
+        }
+        .skillText {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+        }
+      }
+
+      .skillcard:hover,
+      .skillcard:focus {
+        box-shadow: var(--card-shadow-dark);
+        opacity: 1;
+      }
+    }
+    .skills {
+      @include flexprop(column, center, center);
+      width: 45vw;
+      div {
+        box-shadow: var(--card-shadow-s);
+        align-content: center;
+        width: 99%;
+        padding: var(--s-padding);
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        margin-bottom: var(--s-margin);
+      }
+      div::before {
+        content: "● ";
+        color: var(--mint-green);
+        font-size: 1rem;
+        font-weight: 900;
+      }
+    }
+  }
+}
+@media (max-width: 760px) {
+  .skillsContainer .skillsWrapper {
+    height: 65vh;
+    .techstack {
+      height: 60vh;
+    }
+    .techstack .skillcard,
+    .skills {
+      border-radius: var(--s-border-radius);
+    }
+    .techstack .skillcard {
+      padding: var(--xs-padding);
+      flex: 15%;
+      .skillsImg {
+        margin: var(--xxs-margin);
+      }
+      .skillText {
+        font-size: 0.5rem;
+      }
+    }
+    .skills {
+      max-height: 90vh;
+      div {
+        font-size: 0.45rem;
+        margin-bottom: 0.25rem;
+        line-height: 1rem;
+        padding: var(--s-padding);
+      }
+    }
+  }
+}

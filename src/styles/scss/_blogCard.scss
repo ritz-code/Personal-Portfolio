@@ -1,0 +1,59 @@
+@import "./variables";
+
+.blogCard {
+  width: 80%;
+  max-width: var(--max-width);
+  @include flexprop(column, center, center);
+  box-shadow: var(--m-box-shadow);
+  border-radius: var(--m-border-radius);
+  background-color: #d3d2d1;
+  margin-top: var(--l-margin);
+
+  .blogCardLink {
+    @include flexprop(column, center, center);
+    z-index: 2000;
+    padding: var(--p-padding);
+    text-decoration: none;
+    color: #1d1d1f;
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-top: var(--s-margin);
+      margin-bottom: var(--xs-margin);
+      color: #1d1d1f;
+    }
+
+    h2:hover,
+    h2:focus {
+      opacity: 0.8;
+    }
+
+    div {
+      font-size: var(--xs-font);
+      margin-bottom: var(--s-margin);
+    }
+    p {
+      padding-top: var(--xxs-margin);
+      font-size: var(--s-font);
+    }
+  }
+}
+.blogCard:first-child {
+  margin-top: var(--xl-margin);
+}
+
+@media (max-width: 600px) {
+  .blogCard {
+    a.blogCardLink {
+      padding: var(--s-padding);
+      h2 {
+        font-size: 2rem;
+        margin: var(--xxs-margin) 0;
+      }
+      p {
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+      }
+    }
+  }
+}

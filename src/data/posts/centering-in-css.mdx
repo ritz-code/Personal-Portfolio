@@ -1,0 +1,126 @@
+---
+title: Centering in CSS
+description: Easy guide to centering in CSS. When I started out as a web developer, getting a hang of CSS took some sweet time. CSS in itself is easy to start with, the rules being easy to follow but implementing and managing them is another ball game all together.
+publishedOn: April 3, 2022
+slug: centering-in-css
+author: Ritu Rawat
+published: true
+---
+
+One aspect which always took me more time than others was *horizontally and vertically centering* the elements.
+I have applied margin: auto, why doesn’t it center itself. Why isn’t the *div* visible? Why doesn’t even flexbox work as expected? What’s going on? Over the course of learning web development I have asked myself these questions more times than I care to admit
+
+I found so much material online to help me with my CSS issues, and they did help a lot. But maddeningly, sometimes they didn’t. Other factors in play, may affect the current element and you centering goes out of whack.
+
+It was when I started using a one line code in most of my *div*s while designing, that everything started making much more sense. Things just fell together seamlessly, the AHA moment for me. The code was:
+
+<Code language="css">
+    border: 2px solid black;
+</Code>          
+
+What this does is give me a solid view to work with. It takes the visualization out of the picture and gives us specific borders to work with. Ninety percent of the centering errors are solved just by using a border for testing. Often, i figure out a *width attribute* needs to be assigned to the element. At other times, a *block* display was needed. It basically takes out the guesswork from trying to figure out what is wrong with the HTML elements. Once we see how much width and height an element is taking up, it’s easy to center the elements.
+
+Once the visualization part is dealt with, I use the following techniques to center my elements.
+
+### Horizontally Centering Text 
+
+#### 1. Horizontally Centering Text with text-align
+
+The CSS for aligning a *p* tag horizontally in a *div* container, where the HTML is :        
+```<div class="container"><p>Hello world!</p></div>```
+
+<Code language="css">
+//CSS
+.container {
+  width: 150px;
+  height: 150px;
+  border: 2px solid grey;
+}
+p {
+  text-align: center;
+}
+</Code>         
+
+*text-align: center* aligns the text in *p* tag horizontally.
+
+#### 2. Horizontally Centering Div with margin: auto
+We can also use margin: auto for horizontally centering a *div* box in another *div* container, the HTML being:              
+```<div class="container"><div class="box"></div></div>```
+
+<Code language="css">
+//CSS
+.container {
+  width: 150px;
+  height: 150px;
+}
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: greenyellow;
+  margin: 0 auto;
+}
+</Code>      
+
+This code makes sure that the box *div* is horizontally centered.
+
+
+### Centering both vertically and horizontally
+
+#### 1. Using positioning and transform
+When we want to center something horizontally as well as vertically, we can use *position*
+abd *transform* property. The parent *div* element has a *relative* positioning, and the child *div* is assigned and *absolute* 
+positioning. Since, the child is absolutely positioned, we assign it's *top* and *left* property to 50% and then 
+use *transform* to make sure the *div* is absolutely centered.
+
+```<div class="container"><div class="box"></div></div>```
+
+<Code language="css">
+//CSS
+.container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 2px solid grey;
+}
+.box {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: yellow;
+}
+
+</Code>        
+
+#### 2.Using Flexbox
+Flexbox was brought in the CSS fold in 2009, and has absolutely redefined positioning
+and centering in CSS. Before FLexbox, centering was a cumbersome job, and perplexed lot of programmers.
+We can take a nested div with the HTML:       
+```<div class="container"><div class="box"></div></div>```
+
+<Code language="css">
+//CSS
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border: 2px solid grey;
+}
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+</Code>      
+
+Three lines of code:               
+```  display: flex;
+  justify-content: center;
+  align-items: center; ```
+has completely revolutionized centering in CSS.
+
+These were some of the ways we can center various CSS elements easily. 
