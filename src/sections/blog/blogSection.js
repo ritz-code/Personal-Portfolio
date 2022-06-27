@@ -1,8 +1,6 @@
 import React from "react";
-import { NavHashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import '../../styles/scss/_blogSectionContainer.scss';
-import baseUrl from "../../helpers/baseUrl";
 
 //Displays the blog section in the app.js page.
 function BlogSection() {

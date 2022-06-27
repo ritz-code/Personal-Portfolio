@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import BlogCard from "./blogCard";
 import ThemeStyles from '../../helpers/themeStyles';
-import { ThemeContext } from "../../App.js";
 
 import '../../styles/scss/_blog.scss';
 
@@ -13,7 +12,6 @@ const markdownFiles = importAll(require.context('../../data/posts', false, /\.md
  * them on blog front page in <BlogCard> module.
  */
 function Blog() {
-    const { darkTheme } = useContext(ThemeContext);
 
     useEffect(() => {
         getPosts();

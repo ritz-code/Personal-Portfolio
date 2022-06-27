@@ -24,16 +24,10 @@ function OnePost(props) {
     let blogContent = "";
 
     useEffect(() => {
-        const getPost = async() => {
-            const res = await import(`../../data/posts/${slug}.mdx`);
-            const resFetch = await fetch(res.default);
-            const resText = await resFetch.text();
-            setPost(resText);
-        }
-        getPost().catch(console.error);
-    }, [slug]);
+        getPost();
+    }, [post]);
 
-    /* async function getPost() {
+    async function getPost() {
         try {
             const res = await import(`../../data/posts/${slug}.mdx`);
             const resFetch = await fetch(res.default);
@@ -42,7 +36,7 @@ function OnePost(props) {
         } catch (err) {
             console.log(err);
         }
-    } */
+    }
     if (post) {
         blogMetadata = getBlogMetadata({ post });
         blogContent = getBlogContent({ post });
