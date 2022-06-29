@@ -6,9 +6,9 @@
   @include flexprop(column, center, center);
   .skillsWrapper {
     @include flexprop(row, center, center);
-    height: 85vh;
     width: 95%;
     max-width: 1000px;
+    margin: 5rem 0;
 
     .skillcard,
     .skills div {
@@ -72,6 +72,8 @@
         font-size: 0.875rem;
         line-height: 1.25rem;
         margin-bottom: var(--s-margin);
+        line-height: 1.5rem;
+        letter-spacing: 0.04rem;
       }
       div::before {
         content: "● ";
@@ -83,15 +85,22 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (min-width: 1000px) and (max-width: 1024px) {
+  .skillsContainer .skillsWrapper {
+    margin-top: 0rem;
+    height: 140vh;
+  }
+}
+
+@media (max-width: 600px) {
   .skillsContainer {
     h2 {
       margin-top: 1.5rem;
+      margin-bottom: -1rem;
     }
     .skillsWrapper {
-      height: 85vh;
       max-height: 130vh;
-      margin-top: -5rem;
+      margin: 1.5rem 0;
       .techstack {
         height: 60vh;
       }
@@ -116,13 +125,17 @@
           margin-bottom: 0.25rem;
           line-height: 1rem;
           padding: var(--xs-padding);
+          border-radius: var(--s-border-radius);
         }
       }
     }
   }
 }
-@media (max-width: 1024px) {
+
+@media (min-width: 1280px) {
   .skillsContainer .skillsWrapper {
-    margin-top: 5rem;
+    margin-top: -1rem;
+    height: 80vh;
+    min-height: 110vh;
   }
 }
