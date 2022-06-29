@@ -11,30 +11,29 @@ function About() {
 
                     <div className="aboutDetailsContainer">
                         <div className="aboutLine">
-                            <p>Hey, my name is Ritu Rawat. I'm a web developer and artist based in Atlanta, GA.  </p>
-                            <p> I'm always curious to learn more when it comes to new technologies and efficient coding.
+                            <p>Hello, I am Ritu. Welcome to my portfolio! I'm a web developer and designer  based in Atlanta.  </p>
+                            <p>
+                                I have a passion for developing pixel-perfect websites and apps while maintaining a responsive, modular, and DRY code base.
                             </p>
                             <p>
-                                Using React, HTML, CSS, and JavaScript with pre-processors and build tools such as Sass, I have a passion for developing pixel-perfect websites and apps while maintaining a semantic, modular, and DRY code base.
-                            </p>
-                            <p>
-                                I strive to develop and implement responsive and aesthetically pleasing interfaces for websites and apps that adapt to any type of device, platform, or browser.
+                                I strive to develop and implement semantic and aesthetically pleasing interfaces for accessible and elegant websites.
                             </p>
 
                         </div>
-
+                        <div className="mintCircle"></div>
                         <div className="aboutWrapper">
 
                             <div className="aboutText">
                                 <h3>My story</h3>
                                 <p>
-                                    I have worn different hats including software engineering, master's in marketing, being a caretaker, a mom and an art teacher.
-                                    My aspiration has always been to combine these skills to develop accessible, pleasing, marketable and effective websites.
+                                    I have worn different hats: software engineer, sales & marketeer, a caretaker and an art teacher.
+                                    </p>
+                                <p>
+                                    Now, as a self taught web developer, I am looking for an opportunity to develop amazing websites.
                                 </p>
                             </div>
                             <div className="aboutImg">
-                                <div className="mePic">
-                                </div>
+                                <div className="mePic"></div>
                             </div>
                         </div>
                     </div>

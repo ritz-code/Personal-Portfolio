@@ -11,10 +11,12 @@ function BlogSection() {
                 <div className="blogSectionWrapper">
                     <div className="firstLayer">
                         <Link className="blogSectionLinks" to="/blog/building-my-react-website" ><h3>Building my Portfolio</h3></Link>
+                        <hr></hr>
                         <p>A detailed look at all the tools and packages used in my React app. </p>
                     </div>
                     <div className="secondLayer">
                         <Link className="blogSectionLinks" to="/blog/centering-in-css" ><h3>Centering in CSS</h3></Link>
+                        <hr></hr>
                         <p>A guide to horizontally and vertically centering in CSS.</p>
                     </div>
                     <div className="thirdLayer">

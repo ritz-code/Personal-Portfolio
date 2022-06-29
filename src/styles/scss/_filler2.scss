@@ -14,9 +14,9 @@
 
     .dot1,
     .dot2 {
-      width: 7.5rem;
-      height: 7.5rem;
-      border-radius: 46% 54% 59% 41% / 49% 60% 40% 51%;
+      width: 15rem;
+      height: 15rem;
+      border-radius: var(--blob-border-radius);
       background: var(--s-rainbow-linear-gradient);
       width: 60%;
       height: 60%;

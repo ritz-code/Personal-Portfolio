@@ -41,7 +41,7 @@
         transform: translate(-50%);
         width: 2.5rem;
         height: 2.5rem;
-        border-radius: 46% 54% 59% 41% / 49% 60% 40% 51%;
+        border-radius: var(--blob-border-radius);
         background: var(--mint-linear-gradient);
         color: var(--font-color-lightest);
         font-size: var(--sm-font);

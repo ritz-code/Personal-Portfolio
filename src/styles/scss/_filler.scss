@@ -10,7 +10,7 @@
     background: linear-gradient(
       180deg,
       rgba(251, 251, 253, 0.001),
-      var(--lt-mint-green) 90%
+      var(--m-mint-green) 90%
     );
     height: 50vh;
     border-bottom-left-radius: 50% 5%;
@@ -20,7 +20,7 @@
       height: 5rem;
       width: 5rem;
       border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.7);
       z-index: 10;
       opacity: 1;
     }

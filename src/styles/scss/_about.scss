@@ -5,19 +5,18 @@
   @include flexprop(column, center, center);
   width: 100%;
   height: 100%;
-  line-height: 1.5rem;
-  margin-top: var(--s-margin);
 
   .aboutDetailsContainer {
     @include flexprop(column, center, center);
+    position: relative;
     backdrop-filter: blur(50px);
-
+    letter-spacing: 0.01em !important;
     margin-bottom: var(--l-margin);
     .aboutLine {
       width: 80%;
       font-size: 1rem;
       max-width: var(--max-width);
-      margin-bottom: var(--m-margin);
+      margin-bottom: var(--l-margin);
     }
 
     .aboutWrapper {
@@ -34,17 +33,16 @@
 
       .aboutImg {
         height: 100%;
-        
         @include flexprop(column, center, center);
         .mePic {
           position: relative;
           width: 200px;
           height: 200px;
-          border-radius: 52% 48% 42% 58% / 49% 51% 49% 51%;
+          border-radius: 50%;
           background: url("../../../public/png/about/ritu.png");
           background-size: cover;
           box-shadow: var(--card-shadow-s);
-          z-index: 5000;
+          z-index: 5000 !important;
         }
       }
     }
@@ -67,54 +65,90 @@
       animation: rotation 30s linear infinite;
       &::before {
         content: "";
+        @include centering;
         position: absolute;
         height: 40vh;
         width: 40vh;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 52% 48% 42% 58% / 49% 51% 49% 51%;
+        border-radius: var(--blob2-border-radius);
         background-color: var(--md-yellow);
         border: 5px solid transparent;
         border: 7px dotted var(--md-yellow);
       }
-
       &::after {
         content: "";
+        @include centering;
         position: absolute;
         height: 20vh;
         width: 20vh;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 52% 48% 42% 58% / 49% 51% 49% 51%;
-        border-radius: 52% 48% 44% 56% / 49% 44% 56% 51%;
+        border-radius: var(--blob2-border-radius);
         background: radial-gradient(var(--lt-orange), var(--dark-orange) 95%);
-      }
-    }
-
-    @keyframes rotation {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
       }
     }
   }
 }
 
 @media (max-width: 600px) {
-  .aboutContainer .aboutDetailsContainer .aboutWrapper .aboutImg .mePic {
-    left: 1rem;
-    width: 150px;
-    height: 150px;
-    box-shadow: var(--image-shadow);
+  p {
+    line-height: 1.5rem;
+  }
+  .aboutContainer .aboutDetailsContainer {
+    .aboutLine {
+      width: 90%;
+    }
+
+    .mintCircle,
+    .mintCircle::before,
+    .mintCircle::after {
+      position: absolute;
+      border-radius: var(--blob-border-radius);
+      background: var(--lt-mint-linear-gradient);
+    }
+    .mintCircle {
+      top: 17rem;
+      left: -0.5rem;
+      width: 5rem;
+      height: 5rem;
+    }
+    .mintCircle::before {
+      content: "";
+      top: 6rem;
+      left: 10rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .mintCircle::after {
+      content: "";
+      top: 5.5rem;
+      left: 18.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  .aboutContainer .aboutDetailsContainer .aboutWrapper {
+    padding: var(--s-padding);
+    width: 97%;
+
+    .aboutImg {
+      .mePic {
+        position: relative;
+        width: 130px;
+        height: 130px;
+      }
+    }
   }
 }
 @media (min-width: 1024px) {
   .aboutContainer .rotatingWrapper {
     top: 45%;
     right: 5%;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

@@ -11,9 +11,9 @@
     .secondLayer,
     .thirdLayer {
       @include flexprop(column, center, center);
-      background-color: var(--card-bg) !important;
       padding: var(--p-padding);
       margin-bottom: var(--xxs-margin);
+
       .blogSectionLinks {
         text-decoration: none;
         color: #1a1b1e;
@@ -23,7 +23,9 @@
       }
       h3 {
         margin-top: 2rem;
-        font-weight: 900;
+      }
+      h3:hover, h3:focus {
+        transform: scale(1.1);
       }
       box-shadow: var(--m-box-shadow);
       border-radius: var(--m-border-radius);
@@ -36,7 +38,6 @@
     }
   }
 }
-
 @media (max-width: 400px) {
   .blogSectionWrapper {
     .firstLayer,

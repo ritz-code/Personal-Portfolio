@@ -62,8 +62,9 @@
 
 @media (max-width: 540px) {
   #home .homeContainer {
-    width: 25rem;
-    height: 25rem;
+    width: 94vw;
+    height: 94vw;
+    margin-top: var(--l-margin);
     p {
       font-size: 0.7rem;
     }

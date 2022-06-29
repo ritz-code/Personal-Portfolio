@@ -44,6 +44,18 @@
     var(--lt-mint-green)
   );
 
+  --lt-mint-linear-gradient: linear-gradient(
+    var(--ltest-mint-green),
+    var(--mint-green)
+  );
+  --ltest-mint-linear-gradient: linear-gradient(
+    var(--ltest-mint-green),
+    var(--lt-mint-green)
+  );
+
+  --blob-border-radius: 46% 54% 59% 41% / 49% 60% 40% 51%;
+  --blob2-border-radius: 52% 48% 42% 58% / 49% 51% 49% 51%;
+  
   --orange-linear-gradient: linear-gradient(to right, var(--orange), var(--md-orange));
   --hotpink: rgba(244, 29, 136, 0.8);
   --orange: rgba(252, 196, 25, 0.3);
@@ -58,7 +70,7 @@
   --dark-orange: rgba(230, 119, 0, 0.6);
   --ltest-mint-green: rgba(94, 241, 200, 0.1);
   --lt-mint-green: rgba(94, 241, 200, 0.2);
-  --m-mint-green: rgba(94, 241, 200, 0.5);
+  --m-mint-green: rgba(94, 241, 200, 0.3);
   --text-shadow: -1px 2px 2px #474747;
 
   --font-transparent: hsla(0, 0%, 100%, 0.5);
@@ -164,3 +176,10 @@ $max-width: 1000px;
   justify-content: $par2;
   align-items: $par3;
 }
+
+@mixin centering {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
