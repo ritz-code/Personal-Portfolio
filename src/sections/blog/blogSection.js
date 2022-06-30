@@ -21,7 +21,7 @@ function BlogSection() {
                     <div className="firstLayer">
                         <Link className="blogSectionLinks" to="/blog/building-my-react-website" ><h3>Building my Portfolio</h3></Link>
                         <hr></hr>
-                        <p>A detailed documentation of all the tools and packages used in this website. The thought process and planning behind all the decisions made are also documented in this article. </p>
+                        <p>A detailed documentation of all the tools and packages used in this made-from-scratch React website. The thought process and planning behind all the decisions made are also documented in this article. </p>
                     </div>
                     <div className="secondLayer">
                         <Link className="blogSectionLinks" to="/blog/centering-in-css" ><h3>Centering in CSS</h3></Link>

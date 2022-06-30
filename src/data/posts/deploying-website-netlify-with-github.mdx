@@ -1,0 +1,75 @@
+---
+title: Deploying Websites With Netlify
+description: Documentation of pushing code to Github repository and then deploying it on Netlify. This is a easy step by step guide to launch the website on Netlify for free.
+publishedOn: June 29, 2022
+slug: deploying-website-netlify-with-github
+author: Ritu Rawat
+published: true
+---
+
+Deploying your own website seems very daunting, but actually there are many ways to host and deploy websites for free.
+
+I upload my projects to Github for backup, public access and anytime reference. Another free feature of Github is Github Pages where we can deploy our static sites free of charge.
+
+For my portfolio I did push the code to Github, but I deployed it on Netlify. We can build, deploy and host static sites on Netlify which automatically deploys from Github.
+
+### Pushing Code to Github
+
+Its always best to start pushing the code to Git when we start work on a project, this way we have a complete timeline of our project. On Github we can revert back to a previous commit, have a backup for our projects, and can keep on making the changes as and when required. Github is a very efficient way to share our code with everyone.
+
+Once my project is complete, these are the steps I follow:
+
+#### 1. Creating a .gitignore file
+
+Github has generous data limits but having a tail heavy project is never a good idea. Of course, all the code is important but we may need to remove the unimportant files or hide some files (eg. the .env file). The first step for me is to always create a .gitignore file where I make a list of all the files which should not be pushed to my Gihub repository.
+
+On my CLI, I go to the project folder and then create a .gitignore file:
+
+<Code language="cli">$ touch .gitignore    </Code>
+
+This creates .gitignore file, which is a hidden file. I type the following command in my cli to open the file in VS code to be changed if need be.
+
+<Code language="cli">$ code .gitignore  </Code>
+And add node_modules and any other files not meant for pushing to the repository.{" "}
+
+#### 2. Commiting the code to Git
+
+These are the easy steps to push code to Git and finally display in Github:
+
+<Code language="cli">
+  $ git init $ git add -A $ git commit -m "first commit" $ git branch -M main
+</Code>
+
+_git init_ initialises the Git repository on our machine.  
+_git add -A_ adds all the files to the staging area and makes the files from untracked to unmodified(tracking).  
+_git commit -m "first commit"_ commits the file with a message, message being "First Commit" here.  
+_git branch -M main_ specifies the branch name as _main_
+
+All of this is happening on Git, the next stage is to push to Github whoch provides a visual element to Git. For doing this, I go to my Github account and create a new repository with _public_ access selected. Once we create the repository, we get access to a url which we use next.
+
+<Code language="cli">
+  $ git remote add origin github-repo-url $ git push -u origin main
+</Code>
+
+Here I use the Gihub repository url to link the project to the newly created Github repository. And finally the project is pushed to the Github repository. The repository and all the files are now visible on Github and ready to be deployed on Github Pages or any other platform.
+
+#### 3. Deploying on Netlify
+
+I log in to Netlify with my Github acocunt and configure Netlify on Github. After this, I gave Netlify access to the specified Github repository.
+
+Next, we go to _Builds_ and specify the project name, build command and publish directory.
+
+<Code language="cli">
+    build command:     npm run build                            //or CI= npm run build
+    publish directory: build
+</Code>
+
+We all know *npm run build* as the command line prompt to build our React app. Specifying the above attributes lets us build the website. 
+
+After running the build, we may receive errors and warnings. Netlify interprets warnings as hard error and halts the build. I prefer going back to the code and making the code changes to remove the warning errors. However, there is another way to get rid of warning without altering the code. For that, instead pf *npm run build* as the build command, we use *CI= npm run build* as the build command.
+
+Once the project is successfully built, we can go to *Deploys* => *Deploy Settings*, choose the repository and manage the repository attributes and finally deploy the site.
+
+Netlify provides us with a deploy website name which we can use or get a custom domain and link the Netlify web address to the custom domain.
+
+I bought my domain name on namecheap.com and linked it to my Netlify web address, and here we are. Thanks for reading!
