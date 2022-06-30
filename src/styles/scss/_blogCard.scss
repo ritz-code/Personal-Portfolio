@@ -44,6 +44,8 @@
 
 @media (max-width: 600px) {
   .blogCard {
+    width: 90vw;
+    margin-top: var(--m-margin);
     a.blogCardLink {
       padding: var(--s-padding);
       h2 {

@@ -53,6 +53,12 @@
     var(--lt-mint-green)
   );
 
+  --grey-linear-gradient: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.7)
+  );
+  
   --blob-border-radius: 46% 54% 59% 41% / 49% 60% 40% 51%;
   --blob2-border-radius: 52% 48% 42% 58% / 49% 51% 49% 51%;
   
@@ -70,7 +76,7 @@
   --dark-orange: rgba(230, 119, 0, 0.6);
   --ltest-mint-green: rgba(94, 241, 200, 0.1);
   --lt-mint-green: rgba(94, 241, 200, 0.2);
-  --m-mint-green: rgba(94, 241, 200, 0.3);
+  --m-mint-green: rgba(94, 241, 200, 0.6);
   --text-shadow: -1px 2px 2px #474747;
 
   --font-transparent: hsla(0, 0%, 100%, 0.5);

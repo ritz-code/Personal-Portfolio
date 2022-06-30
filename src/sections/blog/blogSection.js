@@ -20,12 +20,10 @@ function BlogSection() {
                 <div className="blogSectionWrapper">
                     <div className="firstLayer">
                         <Link className="blogSectionLinks" to="/blog/building-my-react-website" ><h3>Building my Portfolio</h3></Link>
-                        <hr></hr>
                         <p>A detailed documentation of all the tools and packages used in this made-from-scratch React website. The thought process and planning behind all the decisions made are also documented in this article. </p>
                     </div>
                     <div className="secondLayer">
                         <Link className="blogSectionLinks" to="/blog/centering-in-css" ><h3>Centering in CSS</h3></Link>
-                        <hr></hr>
                         <p>Easy guide to centering in CSS. When I started out as a web developer, getting a hang of CSS took some sweet time. CSS in itself is easy to start with, the rules being easy to follow but implementing and managing them is another ball game all together.</p>
                     </div>
                     <div className="thirdLayer">

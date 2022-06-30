@@ -27,11 +27,7 @@
     width: 90%;
     border-radius: var(--m-border-radius);
     border-bottom: var(--card-border-lt);
-    background-image: linear-gradient(
-      145deg,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.7)
-    );
+    background-image: var(--grey-linear-gradient);
     h2 {
       margin-top: -1rem;
       font-size: var(--ml-font);

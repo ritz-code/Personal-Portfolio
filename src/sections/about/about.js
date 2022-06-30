@@ -20,7 +20,6 @@ function About() {
                             </p>
 
                         </div>
-                        <div className="mintCircle"></div>
                         <div className="aboutWrapper">
 
                             <div className="aboutText">

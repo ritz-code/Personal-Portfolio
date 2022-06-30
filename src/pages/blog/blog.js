@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import BlogCard from "./blogCard";
 import ThemeStyles from '../../helpers/themeStyles';
 
+import Loading from "../../components/loading";
 import '../../styles/scss/_blog.scss';
 
 const importAll = (r) => r.keys().map(r);
@@ -32,7 +33,9 @@ function Blog() {
                 {posts.map((post) => {
                     return (
                         <>
+                        <Suspense fallback={<Loading />}>
                             <BlogCard key={post.title} post={post} />
+                        </Suspense>
                         </>
                     )
                 })}

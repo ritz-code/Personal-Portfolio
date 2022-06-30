@@ -68,7 +68,9 @@
 }
 
 @media (max-width: 600px) {
-  .factsContainer .cardsContainer {
+  .factsContainer {
+    margin-top: -2rem;
+    .cardsContainer {
     width: 95%;
     @include flexprop(column, center, center);
     .factCard {
@@ -83,4 +85,5 @@
       }
     }
   }
+}
 }

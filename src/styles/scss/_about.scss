@@ -94,9 +94,10 @@
   .aboutContainer .aboutDetailsContainer {
     .aboutLine {
       width: 90%;
+      margin-bottom: var(--m-margin);
     }
 
-    .mintCircle,
+    /* .mintCircle,
     .mintCircle::before,
     .mintCircle::after {
       position: absolute;
@@ -104,25 +105,25 @@
       background: var(--lt-mint-linear-gradient);
     }
     .mintCircle {
-      top: 17rem;
+      top: 8rem;
       left: -0.5rem;
-      width: 5rem;
-      height: 5rem;
+      width: 6rem;
+      height: 6rem;
     }
     .mintCircle::before {
       content: "";
-      top: 6rem;
+      top: 10rem;
       left: 10rem;
       width: 3rem;
       height: 3rem;
     }
     .mintCircle::after {
       content: "";
-      top: 5.5rem;
+      top: 13rem;
       left: 18.5rem;
       width: 1.5rem;
       height: 1.5rem;
-    }
+    } */
   }
   .aboutContainer .aboutDetailsContainer .aboutWrapper {
     padding: var(--s-padding);

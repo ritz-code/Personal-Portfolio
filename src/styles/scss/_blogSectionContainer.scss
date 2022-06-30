@@ -1,10 +1,10 @@
 @import "./variables";
 
 .blogSectionContainer {
-  margin-bottom: -50vh;
+  margin-bottom: -65vh;
   z-index: 2000;
   .blogSectionWrapper {
-    width: 80%;
+    width: 75%;
     max-width: var(--max-width);
 
     .firstLayer,
@@ -12,8 +12,8 @@
     .thirdLayer {
       @include flexprop(column, center, center);
       padding: var(--p-padding);
-      margin-bottom: var(--xxs-margin);
-
+      margin-bottom: var(--xs-margin);
+      border-bottom: var(--card-border-lt);
       .blogSectionLinks {
         text-decoration: none;
         color: #1a1b1e;
@@ -39,11 +39,20 @@
     }
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .blogSectionWrapper {
+    width: 90% !important;
     .firstLayer,
     .secondLayer,
     .thirdLayer {
+      .blogSectionLinks {
+        h3 {
+          margin-top: 0.5rem;
+        }
+      }
+      h3 {
+        margin-top: 2rem;
+      }
       h3 {
         font-size: 1.4rem;
         margin: var(--xxs-margin) 0;

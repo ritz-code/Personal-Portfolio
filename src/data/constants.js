@@ -139,7 +139,7 @@ export const facts = [
   {
     number: 3,
     heading: "Responsible",
-    desc: "I headed the Debate team in college and was the Captain, Vice-captain in school. "
+    desc: "I headed the Debate team in college. Handled client subsidiary in Texas (for Wipro)."
   },
   {
     number: 4,
