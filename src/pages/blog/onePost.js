@@ -6,6 +6,7 @@ import getBlogMetadata from '../../helpers/blog/getBlogMetadata';
 import getBlogContent from '../../helpers/blog/getBlogContent';
 import ThemeStyles from '../../helpers/themeStyles';
 
+import Loading from "../../components/loading";
 import Code from './code';
 import '../../styles/scss/_onePost.scss';
 
@@ -24,7 +25,7 @@ function OnePost(props) {
     let blogContent = "";
 
     useEffect(() => {
-        const getPost = async() => {
+        const getPost = async () => {
             const res = await import(`../../data/posts/${slug}.mdx`);
             const resFetch = await fetch(res.default);
             const resText = await resFetch.text();
@@ -33,16 +34,6 @@ function OnePost(props) {
         getPost().catch(console.error);
     }, [slug]);
 
-    /* async function getPost() {
-        try {
-            const res = await import(`../../data/posts/${slug}.mdx`);
-            const resFetch = await fetch(res.default);
-            const resText = await resFetch.text();
-            setPost(resText);
-        } catch (err) {
-            console.log(err);
-        }
-    } */
     if (post) {
         blogMetadata = getBlogMetadata({ post });
         blogContent = getBlogContent({ post });
@@ -50,20 +41,23 @@ function OnePost(props) {
 
     return (
         <>
-            <div style={ThemeStyles()} className="postContainer">
-                <div className='titleBkgnd'><h2>{blogMetadata.title}</h2></div>
-                <div className='postWrapper'>
-                    <p>Published on {blogMetadata.publishedOn} by {blogMetadata.author}</p>
-                    <hr />
-                    <Markdown options={{
-                        overrides: {
-                            Code: {
-                                component: Code
+            {(post) ? <>
+                <div style={ThemeStyles()} className="postContainer">
+                    <div className='titleBkgnd'><h2>{blogMetadata.title}</h2></div>
+                    <div className='postWrapper'>
+                        <p>Published on {blogMetadata.publishedOn} by {blogMetadata.author}</p>
+                        <hr />
+                        <Markdown options={{
+                            overrides: {
+                                Code: {
+                                    component: Code
+                                }
                             }
-                        }
-                    }}>{blogContent}</Markdown>
+                        }}>{blogContent}</Markdown>
+                    </div>
                 </div>
-            </div>
+            </> : <Loading />
+            }
         </>
     )
 }

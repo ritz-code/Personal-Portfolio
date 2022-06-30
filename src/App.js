@@ -67,8 +67,6 @@ const Home = () => {
         <Suspense fallback={<Loading />}>
           <Filler2 />
         </Suspense>
-
-
         <Suspense fallback={<Loading />}>
           <BlogSection />
         </Suspense>

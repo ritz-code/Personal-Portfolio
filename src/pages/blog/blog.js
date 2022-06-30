@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import BlogCard from "./blogCard";
 import ThemeStyles from '../../helpers/themeStyles';
 
@@ -28,18 +28,19 @@ function Blog() {
 
     return (
         <>
+        {(posts && posts.length) ? <>
             <div style={ThemeStyles()} className="container blogContainer">
                             <h1>Blog.</h1>
                 {posts.map((post) => {
                     return (
                         <>
-                        <Suspense fallback={<Loading />}>
                             <BlogCard key={post.title} post={post} />
-                        </Suspense>
                         </>
                     )
                 })}
             </div>
+        </> : <Loading />
+        }
         </>
     );
 }
