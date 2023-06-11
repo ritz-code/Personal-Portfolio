@@ -1,6 +1,5 @@
 import React from "react";
 import { saveAs } from "file-saver";
-import fileDownload from 'js-file-download'
 
 function ResumeButton() {
 

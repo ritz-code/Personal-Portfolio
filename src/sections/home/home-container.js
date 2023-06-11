@@ -1,6 +1,4 @@
 import React from "react";
-
-import ResumeButton from '../../components/resumeButton';
 import '../../styles/scss/_home-container.scss'
 
 
