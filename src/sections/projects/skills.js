@@ -19,13 +19,12 @@ function Skills() {
                         })}
                     </div>
                     <div className="skills">
-                        <div> I have experience developing and designing software for the web. I strive to create software that functions efficiently under the hood, but also provides intuitive, pixel-perfect user experiences.</div>
-                        <div>Writing responsive, accessible, modular code on React and modern JavaScript syntax.</div>
-                        <div>Creating 3D page animations with Threejs. I am also learning Blender to be able to create intricate components and bake them for usage in React.
-                        </div>
-                        <div>Maintaining code on Git and Github.</div>
-                        <div>Deployment on platforms like Vercel and Netlify.</div>
-                        <div>I have always been a learner and an avid reader. Learning about the vast intricacies of web developent fascinates me.</div>
+                        <div> I have experience developing and designing software that functions efficiently under the hood, but also provides intuitive, seamless user experiences.</div>
+                        <div>Experience in analysis, design, development, testing, maintenance, and deployment of applications using Java, JSP, JDBC, Spring, AJAX, JavaScript.</div>
+                        <div>Utilized Java 8 features like Lambda expressions and Stream API for Bulk data operations on Collections which increased the performance of the Application.</div>
+                        <div>Experience in Web-Development technologies like JavaScript, JQuery, JSP, React, HTML5, JSON CSS3, AJAX.</div>
+                        <div>I have always been a learner and an avid reader, and love to always be learning new technologies.</div>
+                       
                     </div>
                 </div>
             </div>

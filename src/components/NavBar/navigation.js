@@ -25,10 +25,10 @@ function Navigation() {
                                 smooth to="/#about"
                             >About</HashLink>
 
-                            <Link style={ThemeStyles()} to="/blog">Blog</Link>
-
                             <HashLink style={ThemeStyles()} smooth to="/#projects"
                             >Portfolio</HashLink>
+
+                            <Link style={ThemeStyles()} to="/blog">Blog</Link>
 
                             <HashLink style={ThemeStyles()} smooth to="/#contact"
                             >Contact</HashLink>

@@ -19,10 +19,10 @@ const NavLinks = ({ click, handleClickMobileNav }) => {
                         smooth to="/#about"
                     >About</HashLink>
 
-                    <Link click={click} onClick={() => handleClickMobileNav(!click)} style={ThemeStyles()} to="/blog">Blog</Link>
-
                     <HashLink click={click} onClick={() => handleClickMobileNav(!click)} style={ThemeStyles()} smooth to="/#projects"
                     >Portfolio</HashLink>
+
+                    <Link click={click} onClick={() => handleClickMobileNav(!click)} style={ThemeStyles()} to="/blog">Blog</Link>
 
                     <HashLink click={click} onClick={() => handleClickMobileNav(!click)} style={ThemeStyles()} smooth to="/#contact"
                     >Contact</HashLink>
@@ -35,10 +35,10 @@ const NavLinks = ({ click, handleClickMobileNav }) => {
                         smooth to="/#about"
                     >About</HashLink>
 
-                    <Link style={ThemeStyles()} to="/blog">Blog</Link>
-
                     <HashLink style={ThemeStyles()} smooth to="/#projects"
                     >Portfolio</HashLink>
+
+                    <Link style={ThemeStyles()} to="/blog">Blog</Link>
 
                     <HashLink style={ThemeStyles()} smooth to="/#contact"
                     >Contact</HashLink>

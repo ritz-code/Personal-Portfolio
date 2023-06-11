@@ -13,7 +13,7 @@ function Contact() {
                     <div className="contactDetailsContainer">
                         <h2>RITU.</h2>
                         <div className="description">
-                            <p>A job profile you'd like to discuss? Collabrating on web development, web design, feedback on blog posts? Just want to say hi? </p>
+                            <p>A job profile you'd like to discuss? Collabaration on a project, feedback on blog posts? Just want to say hi? </p>
                             <p>Drop me an email!</p>
 
                         </div>

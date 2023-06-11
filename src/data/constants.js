@@ -54,7 +54,7 @@ export const projects = [
     desc: "AN ECOMMERCE WEBSITE",
     description: "An eCommerce website with fully functional product page, payment authorization, cart orders and credit card payments.",
     builtUsing: "Built using: ReactJS, NextJS, MongoDB, Stripe",
-    website: "https://femmejolie.vercel.app/",
+    //website: "https://femmejolie.vercel.app/",
     gitRepo: "https://github.com/ritz-code/Femme-Jolie-ecommerce",
     img: "/images/projects/femme-jolie.png",
     imgAlt: "eCommerce site"
@@ -72,6 +72,16 @@ export const projects = [
 
 
 export const skills = [
+  {
+    img: "/svg/icons/java.svg",
+    imgAlt: "java",
+    skillTxt: "Java"
+  },
+  {
+    img: "/svg/icons/spring.svg",
+    imgAlt: "spring",
+    skillTxt: "Spring"
+  },
   {
     img: "/svg/icons/javascript.svg",
     imgAlt: "javascript",
@@ -93,14 +103,24 @@ export const skills = [
     skillTxt: "CSS"
   },
   {
-    img: "/svg/icons/nextjs.svg",
-    imgAlt: "Next.js",
-    skillTxt: "Next.js"
+    img: "/svg/icons/postman.svg",
+    imgAlt: "Postman",
+    skillTxt: "Postman"
   },
   {
-    img: "/svg/icons/threejs.svg",
-    imgAlt: "Three.js",
-    skillTxt: "Three.js"
+    img: "/svg/icons/jira.svg",
+    imgAlt: "JIRA",
+    skillTxt: "JIRA"
+  },
+  {
+    img: "/svg/icons/jquery.svg",
+    imgAlt: "jQuery",
+    skillTxt: "jQuery"
+  },
+  {
+    img: "/svg/icons/nodejs.svg",
+    imgAlt: "nodejs",
+    skillTxt: "nodeJS"
   },
   {
     img: "/svg/icons/npm.svg",
@@ -111,18 +131,7 @@ export const skills = [
     img: "/svg/icons/git.svg",
     imgAlt: "GIT",
     skillTxt: "GIT"
-  },
-  {
-    img: "/svg/icons/netlify.svg",
-    imgAlt: "Netlify",
-    skillTxt: "Netlify"
-  },
-  {
-    img: "/svg/icons/vercel.svg",
-    imgAlt: "Vercel",
-    skillTxt: "Vercel"
   }
-
 ];
 
 export const facts = [
@@ -139,7 +148,7 @@ export const facts = [
   {
     number: 3,
     heading: "Responsible",
-    desc: "I headed the Debate team in college. Handled client subsidiary in Texas (for Wipro)."
+    desc: "I headed the Debate team in college. Handled client subsidiary in Texas."
   },
   {
     number: 4,

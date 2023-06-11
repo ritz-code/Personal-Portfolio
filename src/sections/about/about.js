@@ -11,12 +11,12 @@ function About() {
 
                     <div className="aboutDetailsContainer">
                         <div className="aboutLine">
-                            <p>Hello, I am Ritu. Welcome to my portfolio! I'm a web developer and designer  based in Atlanta.  </p>
+                            <p>Hello, I am Ritu. Welcome to my portfolio!  </p>
                             <p>
-                                I have a passion for developing pixel-perfect websites and apps while maintaining a responsive, modular, and DRY code base.
+                            I am experienced in development and implementation of software applications using Java, J2EE, Spring Framework and JavaScript. I have been involved in all phases of Software Development Life Cycle (SDLC) including analysis, design, implementation, and coding.
                             </p>
                             <p>
-                                I strive to develop and implement semantic and aesthetically pleasing interfaces for accessible and elegant websites.
+                            
                             </p>
 
                         </div>
@@ -25,10 +25,10 @@ function About() {
                             <div className="aboutText">
                                 <h3>My story</h3>
                                 <p>
-                                    I have worn different hats: software engineer, sales & marketeer, a caretaker and an art teacher.
+                                    I have worn different hats: software engineer, sales & marketeer, a caretaker and an art teacher. I bring my varied experience to my work too, can understand different perspectives, and hope to provide new viewpoints.
                                     </p>
                                 <p>
-                                    Now, as a self taught web developer, I am looking for an opportunity to develop amazing websites.
+                                    As a self taught developer, I love learning about latest technologies from all vantage points: how they fit together as a whole, and their intricacies as individual components too.
                                 </p>
                             </div>
                             <div className="aboutImg">

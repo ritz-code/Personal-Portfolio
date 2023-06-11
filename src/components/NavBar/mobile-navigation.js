@@ -32,10 +32,10 @@ function MobileNavigation() {
                                     smooth to="/#about"
                                 >About</HashLink>
 
-                                <Link onClick={handleClickMobileNav} style={ThemeStyles()} to="/blog">Blog</Link>
-
                                 <HashLink onClick={handleClickMobileNav} style={ThemeStyles()} smooth to="/#projects"
                                 >Portfolio</HashLink>
+
+                                <Link onClick={handleClickMobileNav} style={ThemeStyles()} to="/blog">Blog</Link>
 
                                 <HashLink onClick={handleClickMobileNav} style={ThemeStyles()} smooth to="/#contact"
                                 >Contact</HashLink>

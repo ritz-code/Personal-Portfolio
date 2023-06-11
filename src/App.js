@@ -64,12 +64,6 @@ const Home = () => {
       <main style={themeStyles} >
         <HomeContainer />
         <About />
-        <Suspense fallback={<Loading />}>
-          <Filler2 />
-        </Suspense>
-        <Suspense fallback={<Loading />}>
-          <BlogSection />
-        </Suspense>
 
         <Suspense fallback={<Loading />}>
           <Filler />
@@ -78,6 +72,15 @@ const Home = () => {
         <Suspense fallback={<Loading />}>
           <Portfolio />
         </Suspense>
+        
+        <Suspense fallback={<Loading />}>
+          <Filler2 />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <BlogSection />
+        </Suspense>
+
+
 
         <Suspense fallback={<Loading />}>
           <Contact />
